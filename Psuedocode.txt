@@ -1,0 +1,31 @@
+/*----- constants -----*/
+Colors for the game pieces (including the "computer's" response to each player guess).
+
+/*----- state variables -----*/
+Current player (the computer will go once at the start of the game).
+Number of turns remaining.
+Win/loss status.
+
+/*----- cashed elements -----*/ 
+Computer's code (hidden).
+Player's code guesses (colors on the board).
+Computer's code responses (colors on the board).
+
+
+/*----- event listeners -----*/
+A set of colored buttons for the player to click (to fill an array which will then display in order on the board).
+Start game button
+Reset game button 
+
+/*----- functions -----*/ 
+Initialize main game start
+Create randomized code
+Render changes to board
+
+In this version of Mastermind, a single player will start the game.  
+The computer will generate a random code that the playwe must guess.
+The player will select different color buttons to guess a code.
+The game will match the colors and positions chosen by the player, and tell the player how many colors are right and in the right posision, how many are right but in the wrong position, and leave spaces blank if both are wrong.
+When the player reaches 10 wrong guesses, the computer wins.
+If the player guesses correctly, a "player wins" message will display.
+In both cases, the game will remain inactive until the player chooses to start again.  

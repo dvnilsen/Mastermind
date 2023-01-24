@@ -1,18 +1,27 @@
 * {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+    
 
+}
+
+header {
+    color: antiquewhite;
+    font-size: 10vmin;
+    letter-spacing: 1vmin;
+    font-family: sans-serif;
 }
 
 h1 {
-    color: black;
-}
-
-h2 {
-    color: black;
+    color: antiquewhite;
+    font-size: 4vmin;
+    margin-top: -1vmin;
+    font-family: sans-serif;
 }
 
 button {
     color: black; 
+    background-color: lightgreen;
+    height: 4vmin;
 }
 
 body {
@@ -22,6 +31,7 @@ body {
     flex-direction: column; 
     justify-content: center;
     align-items: center; 
+    background-image: linear-gradient(black, rgb(35, 35, 35));
 }
 
 #board {
@@ -31,12 +41,13 @@ body {
     gap: 1vmin; 
     border: 1vmin solid grey;
     border-radius: 2%;
+    background-image: linear-gradient(rgb(75, 75, 75), rgb(35, 35, 35));
     /* border-top: -3vmin; */ 
 }
 
 #board > div {
     border-radius: 50%;
-    border: 0.5vmin solid grey;
+    border: 0.5vmin solid lightgray;
     margin: 20px; 
 }
 
@@ -46,11 +57,44 @@ body {
     grid-template-rows: repeat(1, 10vmin);
     gap: 1vmin; 
     border: 1vmin solid grey; 
-    border-radius: 5%;
+    border-radius: 8%;
+    background-image: linear-gradient(rgb(75, 75, 75), rgb(55, 55, 55));
 }
 
 #compRow > div {
     border-radius: 50%;
-    border: 0.5vmin solid red;
+    border: 0.5vmin solid lightcoral;
     margin: 20px;
+}
+
+#choices {
+    display: grid;
+    grid-template-columns: repeat(4, 10vmin);
+    grid-template-rows: repeat(1, 10vmin);
+    gap: 1vmin; 
+    border: 1vmin solid grey; 
+    border-radius: 8%;
+    background-image: linear-gradient(rgb(55, 55, 55), rgb(35, 35, 35));
+}
+
+#choices > div {
+    
+}
+
+#colors {
+    display: grid;
+    grid-template-columns: repeat(6, 10vmin);
+    grid-template-rows: repeat(1, 10vmin);
+    gap: 1vmin; 
+}
+
+#colors > div {
+    border-radius: 50%;
+    border: 0.5vmin solid white;
+    margin: 20px;
+}
+
+h2 {
+    color:antiquewhite;
+    font-family: sans-serif;
 }

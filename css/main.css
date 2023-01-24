@@ -1,10 +1,22 @@
 * {
-    color: black;
+    box-sizing: border-box;
 
 }
 
+h1 {
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+button {
+    color: black; 
+}
+
 body {
-    height: 100vh;
+    
     margin: 0;
     display: flex;
     flex-direction: column; 
@@ -17,12 +29,15 @@ body {
     grid-template-columns: repeat(4, 10vmin);
     grid-template-rows: repeat(10, 10vmin);
     gap: 1vmin; 
+    border: 1vmin solid grey;
+    border-radius: 2%;
     /* border-top: -3vmin; */ 
 }
 
 #board > div {
     border-radius: 50%;
-    border: 0.1vmin solid grey;
+    border: 0.5vmin solid grey;
+    margin: 20px; 
 }
 
 #compRow {
@@ -30,10 +45,12 @@ body {
     grid-template-columns: repeat(4, 10vmin);
     grid-template-rows: repeat(1, 10vmin);
     gap: 1vmin; 
+    border: 1vmin solid grey; 
+    border-radius: 5%;
 }
 
 #compRow > div {
     border-radius: 50%;
-    border: 0.1vmin solid red;
-
+    border: 0.5vmin solid red;
+    margin: 20px;
 }

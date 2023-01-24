@@ -1,16 +1,15 @@
 /*----- constants -----*/
-const colorsArray = []; 
+const colorArray = []; 
+const colorButtons = []; 
 
 /*----- state variables -----*/
 let board; // array of arrays
 // need separate array for the computer's response 
-
+let choices; // array for the player's guesses
+let code; // computer's secret code 
 let winner; // null = no winner; 1 or - 1 = winner
 let turn;
-
-// arrays to store guesses and responses for each turn
-let playerGuess = [];
-let computerResponse = []; 
+let computerResponse; // array of matches and misses in the player's guess (the "choices" array)
 
 /*----- cashed elements -----*/ 
 
@@ -19,9 +18,33 @@ let computerResponse = [];
 //create one event listener for all buttons, connect buttons to colorsArray
 
 /*----- functions -----*/ 
+init(); 
 
-init();
-render(); 
-secretCode(); 
-checkWin();
+function init() {
+    board = [
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+    ];
+
+    code = [null, null, null, null];
+
+    choices =  [null, null, null, null];
+
+    computerResponse = [null, null, null, null];
+
+    winner = null;
+    turn = 0;
+
+    render(); 
+};
+
+function render() {
+
+}; 
+
+//secretCode(); 
+//checkWin();
 

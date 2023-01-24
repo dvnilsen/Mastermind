@@ -1,4 +1,5 @@
 * {
+    color: black;
 
 }
 
@@ -16,7 +17,7 @@ body {
     grid-template-columns: repeat(4, 10vmin);
     grid-template-rows: repeat(10, 10vmin);
     gap: 1vmin; 
-    border-top: -3vmin; 
+    /* border-top: -3vmin; */ 
 }
 
 #board > div {
@@ -27,10 +28,12 @@ body {
 #compRow {
     display: grid;
     grid-template-columns: repeat(4, 10vmin);
-    grid-template-rows: repeat(10, 10vmin);
+    grid-template-rows: repeat(1, 10vmin);
     gap: 1vmin; 
 }
 
-#compRow > code {
+#compRow > div {
+    border-radius: 50%;
+    border: 0.1vmin solid red;
 
 }

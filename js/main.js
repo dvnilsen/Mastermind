@@ -42,7 +42,9 @@ function init() {
 };
 
 function render() {
-
+    renderBoard();
+    renderMessage();
+    renderControls();  
 }; 
 
 //secretCode(); 

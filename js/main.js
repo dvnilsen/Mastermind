@@ -12,10 +12,12 @@ let currentColor;
 
 /*----- cashed elements -----*/ 
 const choiceBtns = document.getElementById("choices");
+const colorBtns = document.getElementById("colors");
 
 /*----- event listeners -----*/
     // need listeners on each color button to fill board array
 choiceBtns.addEventListener("click", choiceHandler);
+colorBtns.addEventListener("click", colorHandler);
 
 /*----- functions -----*/ 
 init(); 
@@ -52,6 +54,14 @@ function choiceHandler(evt) {
     if(evt.target.tagName !== "DIV") return;
     board[parseInt(evt.target.id)] = currentColor;
     render();
+}
+
+function colorHandler(evt) {
+    if(evt.target.tagName !== "DIV") return;
+    console.log(currentColor);
+    console.log(evt.target.id);
+    currentColor = evt.target.id; 
+    console.log(currentColor);
 }
 
 //checkWin();

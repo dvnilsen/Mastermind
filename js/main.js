@@ -37,13 +37,11 @@ function init() {
     render(); 
 };
 
-// Render the colors on the board spaces and computer response spaces
-// Render gameplay status message
-// Check for winning conditions and update game states
+// Render the current colors on the board spaces and computer response spaces
+// Render current gameplay status message
 function render() {
     renderBoard();
-    renderMessage();
-    renderSubmit();  
+    renderMessage(); 
 }; 
 
 // Generate random set of colors to create the initial code array
@@ -76,13 +74,16 @@ function renderBoard() {
             document.getElementById(`c${colorIdx}r${turn}`).style.backgroundColor = `${colorEl}`;
         }
     });
+    computerResponse.forEach(function (colorEl, colorIdx) {
+
+    });
 }
 
 // Render computer response colors, check for winning condition, and update gameplay status message 
 function renderSubmit() {
-    // ON BUTTON CLICK 
-    // Check for winning condition
-
+    //checkWin();
+    nextTurn();
+    render();
 }
 
 // Update the gameplay status message 
@@ -96,6 +97,11 @@ function renderMessage() {
     }
 }
 
-//nextTurn();
-//checkWin();
+//function checkWin();
+
+function nextTurn() {
+    board = board.map((cell) => null);
+    turn++; 
+};
+
 

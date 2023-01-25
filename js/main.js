@@ -16,6 +16,7 @@ const inputs = document.getElementsByClassName("input-container");
 const responses = document.getElementsByClassName("response");
 const compMessage = document.querySelector("h2"); 
 const submitBtn = document.getElementById("submitBtn");
+const div = document.getElementById("c0r9");
 
 /*----- event listeners -----*/
 choiceBtns.addEventListener("click", choiceHandler);
@@ -33,6 +34,7 @@ function init() {
     winner = null;
     turn = 0;
     currentColor = "blue";
+    console.log(div);
 
     render(); 
 };
@@ -75,12 +77,15 @@ function renderBoard() {
         }
     });
     computerResponse.forEach(function (colorEl, colorIdx) {
-
+        if (colorEl){
+            document.getElementById(`p${turn}c${colorIdx}`).style.backgroundColor = `${colorEl}`;
+        }
     });
 }
 
 // Render computer response colors, check for winning condition, and update gameplay status message 
 function renderSubmit() {
+    if (board.includes(null)) return; 
     //checkWin();
     nextTurn();
     render();
@@ -97,10 +102,13 @@ function renderMessage() {
     }
 }
 
-//function checkWin();
+function checkWin() {
+    
+};
 
 function nextTurn() {
     board = board.map((cell) => null);
+    computerResponse = [];
     turn++; 
 };
 

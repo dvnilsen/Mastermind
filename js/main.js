@@ -1,5 +1,5 @@
 /*----- constants -----*/
-const COLORS = ["blue", "green", "yellow", "red", "white", "black"];
+const COLORS = ["blue", "green", "yellow", "red", "white", "orange"];
 
 /*----- state variables -----*/
 let board; // array for player's choices each turn
@@ -103,7 +103,7 @@ function renderMessage() {
 }
 
 function checkWin() {
-    
+
 };
 
 function nextTurn() {

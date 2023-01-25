@@ -90,7 +90,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     height: 40px;
-    width: 250px;
+    width: 260px;
     border: 1vmin solid grey; 
     border-radius: 7%;
     background-image: linear-gradient(rgb(55, 55, 55), rgb(35, 35, 35));

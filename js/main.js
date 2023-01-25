@@ -29,7 +29,7 @@ function init() {
 
     winner = null;
     turn = 0;
-    currentColor = "red";
+    currentColor = "blue";
 
     render(); 
 };

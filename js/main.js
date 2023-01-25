@@ -3,7 +3,6 @@ const COLORS = ["blue", "green", "yellow", "red", "white", "black"];
 
 /*----- state variables -----*/
 let board; // array of arrays
-// need separate array for the computer's response 
 let code; // computer's secret code 
 let winner; // null = no winner; 1 or - 1 = winner
 let turn;
@@ -13,10 +12,8 @@ let currentColor;
 /*----- cashed elements -----*/ 
 const choiceBtns = document.getElementById("choices");
 const colorBtns = document.getElementById("colors");
-
 const inputs = document.getElementsByClassName("input-container");
 const responses = document.getElementsByClassName("response");
-
 const compMessage = document.querySelector("h2"); // message from the computer describing the current game status 
 
 /*----- event listeners -----*/
@@ -71,24 +68,23 @@ function colorHandler(evt) {
 }
 
 function renderBoard() {
-    // .forEach(function(colArr, colIdx) {
-        colArr.forEach(function(cellVal, cellIdx) {
-        const cellId = `c${colIdx}r${rowIdx}`;
-        const cellEl = document.getElementById(cellId);
-        cellEl.style.backgroundColor = COLORS[cellVal]; // ? string or number 
-      });
+     board.forEach(function(colorEl, colorIdx) {
+        if (colorEl){
+            document.getElementById(`c${colorIdx}r${turn}`).style.backgroundColor = `${colorEl}`;
+        }
     });
 }
 
 function renderMessage() {
-    if () { // player made a winning guess - player wins
+   // if() { // player made a winning guess - player wins
 
-    } else if { // guess is wrong but turns < 10 - guess again
+   // } else if() { // guess is wrong but turns < 10 - guess again
 
-    } else { // guess is wrong and turns === 10 - player loses 
+   // } else { // guess is wrong and turns === 10 - player loses 
 
-    }
+  //  }
 }
 
+//nextTurn();
 //checkWin();
 

@@ -40,7 +40,7 @@ body {
     justify-content: space-between;
     border: 1vmin solid grey;
     border-radius: 2%;
-    background-image: linear-gradient(rgb(75, 75, 75), rgb(35, 35, 35));
+    background-image: linear-gradient(rgb(46, 46, 46), rgb(15, 15, 15));
     /* border-top: -3vmin; */ 
 }
 
@@ -77,7 +77,7 @@ body {
     gap: 1vmin; 
     border: 1vmin solid grey; 
     border-radius: 8%;
-    background-image: linear-gradient(rgb(75, 75, 75), rgb(55, 55, 55));
+    background-image: linear-gradient(rgb(53, 53, 53), rgb(23, 23, 23));
 }
 
 #compRow > div {
@@ -93,7 +93,7 @@ body {
     width: 260px;
     border: 1vmin solid grey; 
     border-radius: 7%;
-    background-image: linear-gradient(rgb(55, 55, 55), rgb(35, 35, 35));
+    background-image: linear-gradient(rgb(45, 45, 45), rgb(18, 18, 18));
 }
 
 #choices > div {

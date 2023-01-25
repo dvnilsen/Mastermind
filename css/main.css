@@ -31,7 +31,7 @@ body {
     flex-direction: column; 
     justify-content: center;
     align-items: center; 
-    background-image: linear-gradient(black, rgb(35, 35, 35));
+    background-image: linear-gradient(black, rgb(65, 65, 65));
 }
 
 #board {

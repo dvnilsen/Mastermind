@@ -17,6 +17,8 @@ const colorBtns = document.getElementById("colors");
 const inputs = document.getElementsByClassName("input-container");
 const responses = document.getElementsByClassName("response");
 
+const compMessage = document.querySelector("h2"); // message from the computer describing the current game status 
+
 /*----- event listeners -----*/
     // need listeners on each color button to fill board array
 choiceBtns.addEventListener("click", choiceHandler);
@@ -69,9 +71,23 @@ function colorHandler(evt) {
 }
 
 function renderBoard() {
-    board.forEach(function(cellVal, cellIdx) {
-        
+    // .forEach(function(colArr, colIdx) {
+        colArr.forEach(function(cellVal, cellIdx) {
+        const cellId = `c${colIdx}r${rowIdx}`;
+        const cellEl = document.getElementById(cellId);
+        cellEl.style.backgroundColor = COLORS[cellVal]; // ? string or number 
+      });
     });
+}
+
+function renderMessage() {
+    if () { // player made a winning guess - player wins
+
+    } else if { // guess is wrong but turns < 10 - guess again
+
+    } else { // guess is wrong and turns === 10 - player loses 
+
+    }
 }
 
 //checkWin();

@@ -14,6 +14,9 @@ let currentColor;
 const choiceBtns = document.getElementById("choices");
 const colorBtns = document.getElementById("colors");
 
+const inputs = document.getElementsByClassName("input-container");
+const responses = document.getElementsByClassName("response");
+
 /*----- event listeners -----*/
     // need listeners on each color button to fill board array
 choiceBtns.addEventListener("click", choiceHandler);
@@ -26,7 +29,7 @@ function init() {
     board = [null, null, null, null];
 
     code = secretCode();
-    console.log(code); 
+    //console.log(code); 
     computerResponse = [];
 
     winner = null;
@@ -37,8 +40,8 @@ function init() {
 };
 
 function render() {
-    //renderBoard();
-    //renderMessage();
+    renderBoard();
+    //renderResponse();
     //renderControls();  
 }; 
 
@@ -58,10 +61,17 @@ function choiceHandler(evt) {
 
 function colorHandler(evt) {
     if(evt.target.tagName !== "DIV") return;
-    console.log(currentColor);
-    console.log(evt.target.id);
+    //console.log(currentColor);
+    //console.log(evt.target.id);
     currentColor = evt.target.id; 
-    console.log(currentColor);
+    //console.log(currentColor)
+    render(); 
+}
+
+function renderBoard() {
+    board.forEach(function(cellVal, cellIdx) {
+        
+    });
 }
 
 //checkWin();

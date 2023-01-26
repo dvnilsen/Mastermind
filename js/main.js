@@ -110,7 +110,7 @@ function checkWin() {
     tempBoard.forEach(function(colorEl, colorIdx) {
         if (colorEl === tempCode[colorIdx]) {
             computerResponse.push("red");
-            tempCode[colorIdx] = 0;
+            tempCode[colorIdx] = -1;
             tempBoard[colorIdx] = 1;
         }
     })
@@ -119,7 +119,7 @@ function checkWin() {
             computerResponse.push("white")
             tempBoard[colorIdx] = 1;
             let newIdx = tempCode.indexOf(colorEl)
-            tempCode[newIdx] = 0; 
+            tempCode[newIdx] = -1; 
         }
     })
 };

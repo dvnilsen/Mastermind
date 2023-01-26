@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
     <title>MasterMind</title>
 </head>
 <body>
     <header>WAR GAMES</header>
-    <h1>Would you like to play a game?*</h1>
+    <h1>Would you like to play a game? </h1>
 
 
     <section id="compRow">
@@ -169,22 +170,22 @@
         <div id="orange"></div>
     </section>
     
-    <h2>Select your colors and press the button to break the code!</h2>
+    <h1 id="compMessage">Select your colors and press the button to break the code!</h1>
 
     <section id="theButtons">
-    <button id="submitBtn">Submit Guess!</button>
+    <button id="submitBtn">Submit Guess</button>
     <button id="resetBtn">Reset The Game</button>
     </section>
     <br>
     <br>
-    <h4>*The rules are simple: The WOPR (War Operation Plan Response) computer (you can call him "Joshua") will select a random nuclear launch code made up of 4 colors (selected from the 6 colors available).  Colors may be duplicated.  
+    <h3>*The rules are simple: The WOPR (War Operation Plan Response) computer (you can call him "Joshua") will select a random nuclear launch code made up of 4 colors (selected from the 6 colors available).  Colors may be duplicated.  
         You will have 10 guesses to break Joshua's code.  After each guess, Joshua will provide feedback on your code's accuracy using the 4 blank spaces on the right - 
         A black space means you have chosen the correct color <i>and</i> the correct position.  A white space means you have chosen the correct color but placed it in the wrong position.  
         A blank space indicates the wrong color was chosen.  
         If you succeed in breaking Joshua's code within 10 guesses, you win the game!  Joshua will return to DEFCON 5 and disarm all nukes. 
         If you fail to guess the code by the 10th guess, Joshua wins the game...all nukes will be launched at their predetermined targets.  
         Choose wisely...
-    </h4>
+    </h3>
     <br>
 </body>
 </html>

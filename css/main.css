@@ -13,10 +13,10 @@ header {
 }
 
 h1 {
-    color: whitesmoke;
+    color: rgb(230, 230, 230);
     font-size: 4vmin;
     margin-top: -1vmin;
-    font-family: 'Courier New', Courier, monospace 
+    font-family: 'VT323', monospace;
 }
 
 button {
@@ -37,21 +37,22 @@ body {
     flex-direction: column; 
     justify-content: center;
     align-items: center; 
-    background-image: linear-gradient(black, rgb(65, 65, 65));
+    background-image: linear-gradient(black, rgb(45, 45, 45));
 }
 
 #board {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1vmin solid grey;
-    border-radius: 2%;
-    background-image: linear-gradient(rgb(46, 46, 46), rgb(15, 15, 15));
-    /* border-top: -3vmin; */ 
+    border: 1.5vmin solid grey;
+    border-radius:1%;
+    background-image: linear-gradient(rgb(57, 57, 57), rgb(36, 36, 36));
+    box-shadow: 0px 0px 10px 9px;
 }
 
 .input-container {
     display: flex;
+    box-shadow: 0px 0px 1px 3px;
 
 }
 
@@ -61,71 +62,83 @@ body {
     height: 20px;
     width: 20px;
     margin: 8px; 
+    box-shadow: 0px 0px 8px 4px;
 }
 
 .response {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
     
 }
 
 .response > div {
-    height: 7px;
-    width: 7px;
-    margin: 2px; 
+    height: 9px;
+    width: 9px;
+    margin: 3px; 
     border: 2px solid lightgray;
 }
 
 #compRow {
-    display: grid;
+   /* display: grid;
     grid-template-columns: repeat(4, 10vmin);
     grid-template-rows: repeat(1, 10vmin);
-    gap: 1vmin; 
-    border: 1vmin solid grey; 
-    border-radius: 8%;
+    gap: 1vmin; */
+    display: flex;
+    justify-content: space-evenly;
+    height: 45px;
+    width: 250px;
+    border: 0.75vmin solid grey; 
+    border-radius: 7%;
     background-image: linear-gradient(rgb(53, 53, 53), rgb(23, 23, 23));
+    box-shadow: 0px 0px 10px 10px;
 }
 
 #compRow > div {
+    width: 25px;
+    margin: 8px;
+    border: 2px solid rgb(255, 105, 105);
     border-radius: 50%;
-    border: 0.5vmin solid rgb(255, 110, 110);
-    margin: 20px;
+    box-shadow: 0px 0px 9px 2px;
 }
 
 #choices {
     display: flex;
     justify-content: space-evenly;
-    height: 40px;
-    width: 260px;
-    border: 1vmin solid grey; 
+    height: 45px;
+    width: 250px;
+    border: 0.75vmin solid grey; 
     border-radius: 7%;
     background-image: linear-gradient(rgb(45, 45, 45), rgb(18, 18, 18));
+    box-shadow: 0px 0px 10px 8px;
 }
 
 #choices > div {
-    width: 15px;
-    width: 15px;
-    margin: 10px;
+    width: 25px;
+    margin: 8px;
     border: 2px solid antiquewhite;
     border-radius: 50%;
+    box-shadow: 0px 0px 9px 2px;
 }
 
 #colors {
     display: grid;
-    grid-template-columns: repeat(6, 10vmin);
-    grid-template-rows: repeat(1, 10vmin);
-    gap: 1vmin; 
+    grid-template-columns: repeat(6, 8vmin);
+    grid-template-rows: repeat(1, 8vmin);
+    
+    
 }
 
 #colors > div {
     border-radius: 50%;
     border: 0.5vmin solid white;
-    margin: 20px;
+    margin: 18px;
+    box-shadow: 0px 0px 9px 2px;
 }
 
 h2 {
     color: whitesmoke;
-    font-family: sans-serif;
+    font-family: 'VT323', monospace;
 }
 
 #blue {
@@ -145,4 +158,9 @@ h2 {
 }
 #orange {
     background-color: orange;
+}
+
+h3 {
+    color: whitesmoke;
+    font-family: 'VT323', monospace;
 }

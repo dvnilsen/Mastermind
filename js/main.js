@@ -14,7 +14,7 @@ const choiceBtns = document.getElementById("choices");
 const colorBtns = document.getElementById("colors");
 const inputs = document.getElementsByClassName("input-container");
 const responses = document.getElementsByClassName("response");
-const compMessage = document.querySelector("h2"); 
+const compMessage = document.getElementById("compMessage"); 
 const submitBtn = document.getElementById("submitBtn");
 const resetBtn = document.getElementById("resetBtn");
 
@@ -35,8 +35,9 @@ function init() {
     winner = null;
     turn = 0;
     currentColor = "blue";
-
     render(); 
+    compMessage.innerText = "Input your colors on the board and press Submit..."
+    
 };
 
 // Render the current colors on the board spaces and computer response spaces
@@ -83,7 +84,7 @@ function secretCode() {
 // Update current color choice on button click
 function colorHandler(evt) {
     if(evt.target.tagName !== "DIV") return;
-    if(turn === 9) return; 
+    if(turn === 10) return; 
     currentColor = evt.target.id; 
     render(); 
 }
@@ -91,15 +92,15 @@ function colorHandler(evt) {
 // Assign current color choice to corresponding space on the board on button click
 function choiceHandler(evt) {
     if(evt.target.tagName !== "DIV") return;
-    if(turn === 9) return; 
+    if(turn === 10) return; 
     board[parseInt(evt.target.id)] = currentColor;
     render();
 }
 
 // Render computer response colors, check for winning condition, and update gameplay status message 
 function renderSubmit() {
-    if (board.includes(null)) return; 
-    if (turn === 9) return; 
+    if(board.includes(null)) return; 
+    if(turn === 10) return; 
     checkWin();
     render();
     nextTurn();

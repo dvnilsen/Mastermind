@@ -86,9 +86,11 @@ function renderBoard() {
 // Render computer response colors, check for winning condition, and update gameplay status message 
 function renderSubmit() {
     if (board.includes(null)) return; 
-    //checkWin();
-    nextTurn();
+    checkWin();
     render();
+    nextTurn();
+    console.log(turn); 
+    console.log(code);
 }
 
 // Update the gameplay status message 
@@ -103,7 +105,23 @@ function renderMessage() {
 }
 
 function checkWin() {
-
+    let tempCode = code.map(color => color);
+    let tempBoard = board.map(color => color);
+    tempBoard.forEach(function(colorEl, colorIdx) {
+        if (colorEl === tempCode[colorIdx]) {
+            computerResponse.push("red");
+            tempCode[colorIdx] = 0;
+            tempBoard[colorIdx] = 1;
+        }
+    })
+    tempBoard.forEach(function (colorEl, colorIdx) {
+        if (tempCode.includes(colorEl)) {
+            computerResponse.push("white")
+            tempBoard[colorIdx] = 1;
+            let newIdx = tempCode.indexOf(colorEl)
+            tempCode[newIdx] = 0; 
+        }
+    })
 };
 
 function nextTurn() {

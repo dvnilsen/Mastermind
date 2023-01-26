@@ -5,23 +5,31 @@
 }
 
 header {
-    color: antiquewhite;
+    color: rgb(255, 56, 53);
     font-size: 10vmin;
-    letter-spacing: 1vmin;
-    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    letter-spacing: -1.5vmin;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 h1 {
-    color: antiquewhite;
+    color: white;
     font-size: 4vmin;
     margin-top: -1vmin;
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace 
 }
 
 button {
     color: black; 
+    font-weight: bold;
+    border: 3px solid black;
+    border-radius: 5%;
     background-color: lightgreen;
     height: 4vmin;
+}
+
+#resetBtn {
+    background-color: lightcoral;
 }
 
 body {
@@ -82,7 +90,7 @@ body {
 
 #compRow > div {
     border-radius: 50%;
-    border: 0.5vmin solid lightcoral;
+    border: 0.5vmin solid rgb(255, 110, 110);
     margin: 20px;
 }
 

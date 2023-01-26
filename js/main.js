@@ -16,12 +16,13 @@ const inputs = document.getElementsByClassName("input-container");
 const responses = document.getElementsByClassName("response");
 const compMessage = document.querySelector("h2"); 
 const submitBtn = document.getElementById("submitBtn");
-const div = document.getElementById("c0r9");
+const resetBtn = document.getElementById("resetBtn");
 
 /*----- event listeners -----*/
 choiceBtns.addEventListener("click", choiceHandler);
 colorBtns.addEventListener("click", colorHandler);
 submitBtn.addEventListener("click", renderSubmit);
+resetBtn.addEventListener("click", renderSubmit);
 
 /*----- functions -----*/ 
 init(); 
@@ -34,7 +35,6 @@ function init() {
     winner = null;
     turn = 0;
     currentColor = "blue";
-    console.log(div);
 
     render(); 
 };
@@ -45,6 +45,31 @@ function render() {
     renderBoard();
     renderMessage(); 
 }; 
+
+// Render the color choice assigned to each space on the board 
+function renderBoard() {
+    board.forEach(function(colorEl, colorIdx) {
+       if (colorEl){
+           document.getElementById(`c${colorIdx}r${turn}`).style.backgroundColor = `${colorEl}`;
+       }
+   });
+   computerResponse.forEach(function (colorEl, colorIdx) {
+       if (colorEl){
+           document.getElementById(`p${turn}c${colorIdx}`).style.backgroundColor = `${colorEl}`;
+       }
+   });
+}
+
+// Update the gameplay status message 
+function renderMessage() {
+   if(winner === 1) { 
+       compMessage.innerText = "Congratulations! You broke the code!  Now at DEFCON 5.";
+   } else if(winner === -1) { 
+       compMessage.innerText = "I'm sorry, you lost the game. Now at DEFCON 1. Launching nuclear missles..."
+   } else { 
+       compMessage.innerText = "Incorrect guess. Please guess again..."
+   }
+}
 
 // Generate random set of colors to create the initial code array
 function secretCode() {
@@ -69,20 +94,6 @@ function choiceHandler(evt) {
     render();
 }
 
-// Render the color choice assigned to each space on the board 
-function renderBoard() {
-     board.forEach(function(colorEl, colorIdx) {
-        if (colorEl){
-            document.getElementById(`c${colorIdx}r${turn}`).style.backgroundColor = `${colorEl}`;
-        }
-    });
-    computerResponse.forEach(function (colorEl, colorIdx) {
-        if (colorEl){
-            document.getElementById(`p${turn}c${colorIdx}`).style.backgroundColor = `${colorEl}`;
-        }
-    });
-}
-
 // Render computer response colors, check for winning condition, and update gameplay status message 
 function renderSubmit() {
     if (board.includes(null)) return; 
@@ -93,17 +104,7 @@ function renderSubmit() {
     console.log(code);
 }
 
-// Update the gameplay status message 
-function renderMessage() {
-    if(winner === true) { // player made a winning guess - player wins
-
-    } else if(winner === false && turn < 9) { // guess is wrong but turns < 10 - guess again
-
-    } else { // guess is wrong and turns === 10 - player loses 
-
-    }
-}
-
+// Compare player guess array and code array for perfect match, update winner status accordingly 
 function checkWin() {
     let tempCode = code.map(color => color);
     let tempBoard = board.map(color => color);
@@ -122,12 +123,22 @@ function checkWin() {
             tempCode[newIdx] = -1; 
         }
     })
+    if(computerResponse.every(color => color === "red") && (computerResponse.length === 4)) {
+        winner = 1;
+    } else if (winner === null && turn === 9) {
+        winner = -1;
+    } else return; 
 };
 
+// Update player guess array and computer response array to empty and increment the turn count 
 function nextTurn() {
     board = board.map((cell) => null);
     computerResponse = [];
     turn++; 
 };
+
+function renderReset() {
+
+}; 
 
 

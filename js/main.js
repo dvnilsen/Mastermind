@@ -83,6 +83,7 @@ function secretCode() {
 // Update current color choice on button click
 function colorHandler(evt) {
     if(evt.target.tagName !== "DIV") return;
+    if(turn === 9) return; 
     currentColor = evt.target.id; 
     render(); 
 }
@@ -90,6 +91,7 @@ function colorHandler(evt) {
 // Assign current color choice to corresponding space on the board on button click
 function choiceHandler(evt) {
     if(evt.target.tagName !== "DIV") return;
+    if(turn === 9) return; 
     board[parseInt(evt.target.id)] = currentColor;
     render();
 }
@@ -97,6 +99,7 @@ function choiceHandler(evt) {
 // Render computer response colors, check for winning condition, and update gameplay status message 
 function renderSubmit() {
     if (board.includes(null)) return; 
+    if (turn === 9) return; 
     checkWin();
     render();
     nextTurn();

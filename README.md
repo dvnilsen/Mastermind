@@ -7,7 +7,7 @@ In the classic game MasterMind, one player selects a "code" made up of 4 colors,
 
 ![WarGames](./assets/WGPoster.jpeg "WarGames")
 
-"War Games" is the classic 1983 film about a young hacker named David who accidentally connects to "Joshua" - the US Military's top secret super computer.  When Joshua asks "Shall we play a game?", David starts a game of thermonuclear war that the computer believes is real!  In the famous ending of the film, David convinces Joshua to play every possible scenario of thermonuclear war to discover that there is no way to win.  Joshua finally says: "A strange game.  The only winning move is not play." 
+"War Games" is the classic 1983 film about a young hacker named David who accidentally connects to "Joshua" - the US Military's top secret super computer also known as W.O.P.R.  When Joshua asks "Shall we play a game?", David starts a game of thermonuclear war that the computer believes is real!  In the famous ending of the film, David convinces Joshua to play every possible scenario of thermonuclear war to discover that there is no way to win.  Joshua finally says: "A strange game.  The only winning move is not play." 
 
 ![WOPR](./assets/WOPR.jpeg "WOPR") 
 

@@ -19,13 +19,11 @@ const compMessage = document.getElementById("compMessage");
 const submitBtn = document.getElementById("submitBtn");
 const resetBtn = document.getElementById("resetBtn");
 
-
 /*----- event listeners -----*/
 choiceBtns.addEventListener("click", choiceHandler);
 colorBtns.addEventListener("click", colorHandler);
 submitBtn.addEventListener("click", renderSubmit);
 resetBtn.addEventListener("click", renderReset);
-
 
 /*----- functions -----*/ 
 init(); 
@@ -44,7 +42,6 @@ function init() {
 };
 
 // Render the current colors on the board spaces and computer response spaces
-// Render current gameplay status message
 function render() {
     renderBoard(); 
 }; 
@@ -66,7 +63,7 @@ function renderBoard() {
 // Update the gameplay status message 
 function renderMessage() {
    if(winner === 1) { 
-       compMessage.innerText = "Congratulations! You broke the code!  Now at DEFCON 5.";
+       compMessage.innerText = "Congratulations! You broke the code! Return to DEFCON 5";
    } else if(winner === -1) { 
        compMessage.innerText = "I'm sorry, you lost the game. Now at DEFCON 1. Launching nuclear missles..."
    } else { 
@@ -96,14 +93,14 @@ function choiceHandler(evt) {
     if(turn === 10) return; 
     if(winner === 1) return; 
     board[parseInt(evt.target.id)] = currentColor;
-    renderBoard();
+    render();
 }
 
 // Render computer response colors, check for winning condition, and update gameplay status message 
 function renderSubmit() {
     if(board.includes(null)) return; 
     if(turn === 10) return; 
-    if(winner === 1) return; 
+    if(winner !== null) return; 
     checkWin();
     renderMessage();
     render();

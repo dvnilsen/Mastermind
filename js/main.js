@@ -92,6 +92,7 @@ function colorHandler(evt) {
 function choiceHandler(evt) {
     if(evt.target.tagName !== "DIV") return;
     if(turn === 10) return; 
+    if(winner === 1) return; 
     board[parseInt(evt.target.id)] = currentColor;
     renderBoard();
 }
@@ -100,7 +101,9 @@ function choiceHandler(evt) {
 function renderSubmit() {
     if(board.includes(null)) return; 
     if(turn === 10) return; 
+    if(winner === 1) return; 
     checkWin();
+    renderMessage();
     render();
     nextTurn();
     console.log(turn); 
@@ -131,6 +134,7 @@ function checkWin() {
     } else if (winner === null && turn === 9) {
         winner = -1;
     } else return; 
+    console.log(winner);
 };
 
 // Update player guess array and computer response array to empty and increment the turn count 

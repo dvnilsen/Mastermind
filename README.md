@@ -1,6 +1,8 @@
 # WarGames
 
 ## Description and Background
+![Mastermind](./assets/mastermind.jpg "Mastermind")
+
 In the classic game MasterMind, one player selects a "code" made up of 4 colors, which is hidden from the other player.  The other player then has 10 chances to guess the code.  After each guess, the first player will indicate what the second player got right and wrong using colored pegs (typically, a black peg means one correct color in the correct spot, a white peg means one correct color in the wrong spot, and a blank means an incorrect color was chosen).
 
 ![WarGames](./assets/WGPoster.jpeg "WarGames")

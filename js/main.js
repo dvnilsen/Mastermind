@@ -40,14 +40,13 @@ function init() {
     currentColor = "blue";
     render(); 
     compMessage;
-    
+    console.log(code);
 };
 
 // Render the current colors on the board spaces and computer response spaces
 // Render current gameplay status message
 function render() {
     renderBoard(); 
-    console.log(code); 
 }; 
 
 // Render the color choice assigned to each space on the board 

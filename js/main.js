@@ -1,5 +1,5 @@
 /*----- constants -----*/
-const COLORS = ["blue", "green", "yellow", "red", "white", "orange"];
+const COLORS = ["blue", "green", "yellow", "red", "purple", "orange"];
 
 /*----- state variables -----*/
 let board; // array for player's choices each turn
@@ -7,6 +7,7 @@ let code; // computer's secret code
 let winner; // null = no winner yet; 1 or - 1 = winner
 let turn; // current turn number
 let computerResponse; // array 
+let codeReveal; // display code at the end of the game 
 let currentColor; // player's color choice to place on a board space
 
 /*----- cashed elements -----*/ 
@@ -17,6 +18,7 @@ const responses = document.getElementsByClassName("response");
 const compMessage = document.getElementById("compMessage"); 
 const submitBtn = document.getElementById("submitBtn");
 const resetBtn = document.getElementById("resetBtn");
+
 
 /*----- event listeners -----*/
 choiceBtns.addEventListener("click", choiceHandler);
@@ -45,6 +47,7 @@ function init() {
 // Render current gameplay status message
 function render() {
     renderBoard(); 
+    console.log(code); 
 }; 
 
 // Render the color choice assigned to each space on the board 
@@ -106,8 +109,6 @@ function renderSubmit() {
     renderMessage();
     render();
     nextTurn();
-    console.log(turn); 
-    console.log(code);
 }
 
 // Compare player guess array and code array for perfect match, update winner status accordingly 
@@ -131,10 +132,17 @@ function checkWin() {
     })
     if(computerResponse.every(color => color === "red") && (computerResponse.length === 4)) {
         winner = 1;
+        for(let i=0; i<4; i++){
+            document.getElementById(`r${i}`).style.backgroundColor = code[i]; 
+            document.getElementById(`r${i}`).innerText = ""; 
+        }
     } else if (winner === null && turn === 9) {
         winner = -1;
+        for(let i=0; i<4; i++){
+            document.getElementById(`r${i}`).style.backgroundColor = code[i]; 
+            document.getElementById(`r${i}`).innerText = ""; 
+        }
     } else return; 
-    console.log(winner);
 };
 
 // Update player guess array and computer response array to empty and increment the turn count 
@@ -156,6 +164,10 @@ function renderReset() {
             document.getElementById(`p${i}c${j}`).style.backgroundColor = "transparent";
         }
     };
+    for(let i=0; i<4; i++){
+        document.getElementById(`r${i}`).style.backgroundColor = "black"; 
+        document.getElementById(`r${i}`).innerText = "?"; 
+    }
     init(); 
 }; 
 

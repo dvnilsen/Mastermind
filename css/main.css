@@ -58,7 +58,7 @@ body {
 
 .input-container > div {
     border-radius: 50%;
-    border: 0.5vmin solid lightgray;
+    border: 0.5vmin solid antiquewhite;
     height: 20px;
     width: 20px;
     margin: 8px; 

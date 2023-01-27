@@ -37,7 +37,7 @@ function init() {
     turn = 0;
     currentColor = "blue";
     render(); 
-    compMessage.innerText = "Input your colors on the board and press Submit..."
+    compMessage;
     
 };
 
@@ -151,7 +151,11 @@ function renderReset() {
             document.getElementById(`c${i}r${j}`).style.backgroundColor = "transparent";
         }
     };
-
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 4; j++) {
+            document.getElementById(`p${i}c${j}`).style.backgroundColor = "transparent";
+        }
+    };
     init(); 
 }; 
 

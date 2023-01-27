@@ -22,7 +22,8 @@ const resetBtn = document.getElementById("resetBtn");
 choiceBtns.addEventListener("click", choiceHandler);
 colorBtns.addEventListener("click", colorHandler);
 submitBtn.addEventListener("click", renderSubmit);
-resetBtn.addEventListener("click", renderSubmit);
+resetBtn.addEventListener("click", renderReset);
+
 
 /*----- functions -----*/ 
 init(); 
@@ -43,8 +44,7 @@ function init() {
 // Render the current colors on the board spaces and computer response spaces
 // Render current gameplay status message
 function render() {
-    renderBoard();
-    renderMessage(); 
+    renderBoard(); 
 }; 
 
 // Render the color choice assigned to each space on the board 
@@ -86,7 +86,6 @@ function colorHandler(evt) {
     if(evt.target.tagName !== "DIV") return;
     if(turn === 10) return; 
     currentColor = evt.target.id; 
-    render(); 
 }
 
 // Assign current color choice to corresponding space on the board on button click
@@ -94,7 +93,7 @@ function choiceHandler(evt) {
     if(evt.target.tagName !== "DIV") return;
     if(turn === 10) return; 
     board[parseInt(evt.target.id)] = currentColor;
-    render();
+    renderBoard();
 }
 
 // Render computer response colors, check for winning condition, and update gameplay status message 
@@ -121,7 +120,7 @@ function checkWin() {
     })
     tempBoard.forEach(function (colorEl, colorIdx) {
         if (tempCode.includes(colorEl)) {
-            computerResponse.push("white")
+            computerResponse.push("yellow")
             tempBoard[colorIdx] = 1;
             let newIdx = tempCode.indexOf(colorEl)
             tempCode[newIdx] = -1; 
@@ -141,8 +140,15 @@ function nextTurn() {
     turn++; 
 };
 
+// Reset all game spaces to blank and call the init function
 function renderReset() {
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 10; j++) {
+            document.getElementById(`c${i}r${j}`).style.backgroundColor = "transparent";
+        }
+    };
 
+    init(); 
 }; 
 
 
